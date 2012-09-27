@@ -7,6 +7,12 @@
 </head>
 
 <body>
+<div class="menu">
+    @Html.ActionLink("Home", "index", "Home")
+    @Html.ActionLink("Statistics", "index", "Statistics")
+    @Html.ActionLink("Default", "index", "Default")
+    @Html.ActionLink("News", "index", "News")
+</div>
     @RenderBody()
 </body>
 </html>
