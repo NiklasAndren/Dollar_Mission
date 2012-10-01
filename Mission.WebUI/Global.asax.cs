@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
+using Mission.WebUI.Infrastructure;
 
 namespace Mission.WebUI
 {
@@ -32,6 +33,8 @@ namespace Mission.WebUI
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            ControllerBuilder.Current.SetControllerFactory(new NinjectControllerFactory());
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
