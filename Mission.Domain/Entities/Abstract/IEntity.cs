@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Mission.Domain
+namespace Mission.Domain.Entities.Abstract
 {
-    public class Class1
+    public interface IEntity
     {
+        Guid ID { get; set; }
     }
 }
+

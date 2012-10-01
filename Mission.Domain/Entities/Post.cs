@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Mission.Domain.Entities.Abstract;
 
-namespace Mission.Domain.Entities.News
+namespace Mission.Domain.Entities
 {
-    class Post
+
+    public enum Type { News, Blog }
+    public class Post : IEntity
     {
-        public int PostID { get; set; }
+        public Guid UserID { get; set; }
+        public User User { get; set; }
+        public Guid ID { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public string Body { get; set; }
-        public int Type { get; set; }
+        public Type Type { get; set; }
     }
 }

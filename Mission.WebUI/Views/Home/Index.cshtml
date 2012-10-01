@@ -1,5 +1,14 @@
-﻿@{
+﻿@using Mission.Domain.Entities
+@model List<Post>
+
+@{
     ViewBag.Title = "Jesper Caron";
 }
 
 <h2>Home</h2>
+
+
+@foreach (var News in Model) { 
+    @News.Title <br />
+    
+}
