@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 using Mission.WebUI.Infrastructure;
+using Mission.Domain.Contexts;
+using System.Data.Entity;
 
 namespace Mission.WebUI
 {
@@ -38,6 +40,7 @@ namespace Mission.WebUI
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+            Database.SetInitializer(new MissionInitializer());
         }
     }
 }

@@ -10,12 +10,13 @@ namespace Mission.Domain.Entities
     public enum Type { News, Blog }
     public class Post : IEntity
     {
-        public Guid UserID { get; set; }
-        public User User { get; set; }
+             
         public Guid ID { get; set; }
         public string Title { get; set; }
         public DateTime Date { get; set; }
         public string Body { get; set; }
-        public Type Type { get; set; }
+        public int Type { get; set; }
+        public virtual User User { get; set; }
+        public Guid UserID { get; set; }
     }
 }
