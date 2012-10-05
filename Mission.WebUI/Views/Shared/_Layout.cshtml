@@ -8,10 +8,12 @@
 
 <body>
 <div class="menu">
-    @Html.ActionLink("Home", "index", "Home")
-    @Html.ActionLink("Statistics", "index", "Statistics")
-    @Html.ActionLink("Default", "index", "Default")
-    @Html.ActionLink("News", "index", "News")
+
+    <li>@Html.ActionLink("Home", "index", "Home")</li>
+    <li>@Html.ActionLink("Statistics", "index", "Statistics")</li>
+    <li>@Html.ActionLink("Default", "index", "Default")</li>
+    <li>@Html.ActionLink("News", "index", "News")</li>
+    
 </div>
     @RenderBody()
 </body>
