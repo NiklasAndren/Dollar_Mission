@@ -26,7 +26,7 @@ namespace Mission.WebUI.Infrastructure
 
         private void AddBindings()
         {
-              ninjectKernel.Bind(typeof(IRepository<>)).To(typeof(FakeRepo<>));
+              ninjectKernel.Bind(typeof(IRepository<>)).To(typeof(Repository<>));
         }
     }
 }

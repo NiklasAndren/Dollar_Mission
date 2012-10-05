@@ -7,6 +7,7 @@ using Mission.Domain.Repositories.Abstract;
 using Mission.Domain.Entities;
 using Mission.Domain.Repositories;
 using Mission.Domain.Entities.FakeData;
+using System.Data.Entity;
 
 namespace Mission.WebUI.Controllers
 {
@@ -22,10 +23,18 @@ namespace Mission.WebUI.Controllers
         // GET: /News/
 
 
-        public ActionResult Index()
-        {
+        public ActionResult Index() {
+
+            List<Post> AllPosts = _postRepo.FindAll(p => p.Type == (int)Domain.Entities.Type.News).Include(p => p.User).ToList();
+    
+            return View(AllPosts);
+        }
+
+        public ActionResult test(){
+           
             return View();
         }
+
 
     }
 }
